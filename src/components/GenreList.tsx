@@ -12,7 +12,11 @@ import {
 } from "@chakra-ui/react";
 import getCroppedImageUrl from "../services/image-url";
 
-export const GenreList = () => {
+interface Props {
+  onSelectGenre: (genre: Genre) => void;
+}
+
+export const GenreList = ({ onSelectGenre }: Props) => {
   const { data, isLoading, error } = useData<Genre>("/genres");
 
   if (error) return null;
@@ -31,7 +35,11 @@ export const GenreList = () => {
               borderRadius={8}
               src={getCroppedImageUrl(genre.image_background)}
             />
-            <Button fontSize="lg" variant="link">
+            <Button
+              onClick={() => onSelectGenre(genre)}
+              fontSize="lg"
+              variant="link"
+            >
               {genre.name}
             </Button>
           </HStack>
