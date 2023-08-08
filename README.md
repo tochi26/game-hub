@@ -6,7 +6,7 @@ Welcome to the Discovery Game App, a fun and interactive web application built w
 
 ## Credits
 
-- Developed by [Tochukwu Nzewi](https://github.com/your-username)
+- Developed by [Tochukwu Nzewi](https://github.com/tochi26)
 
 ## License
 
