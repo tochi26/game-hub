@@ -1,9 +1,11 @@
 import axios from 'axios';
 
-export default axios.create({
-    baseURL:'https://api.rawg.io/api',
-    params: {
-        key:'bacc85fd0c944d9daa20c38d575beb2a'
-    }
-})
+const instance = axios.create({
+    baseURL: 'https://api.rawg.io/api',
+});
 
+instance.defaults.params = {
+    key: import.meta.env.VITE_REACT_APP_RAWG_API_KEY,
+};
+
+export default instance;
